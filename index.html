@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoGame</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="login-container" id="login-container">
+      <div class="inner-container">
+        <h1>GeoGame Trivia</h1>
+        <h2>Login</h2>
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Username" />
+          <input type="password" id="password" placeholder="Password" />
+          <button id="login-btn">Login</button>
+        </div>
+        <p>
+          Don't have an account?
+          <div id="create-user-btn">Create New User!</div>
+        </p>
+      </div>
+    </div>
+
+    <div class="signup-container" id="signup-container" style="display: none">
+      <div class="inner-container">
+        <h1>GeoGame Trivia</h1>
+        <h2>Sign Up</h2>
+        <div class="input-group">
+          <input type="text" id="signup-username" placeholder="Username" />
+          <input type="password" id="signup-password" placeholder="Password" />
+          <button id="signup-btn">Sign Up</button>
+        </div>
+        <p>
+          Already have an account?
+          <div id="signin-btn">Sign In!</div>
+        </p>
+      </div>
+    </div>
+
+    <div class="game-container" id="game-container" style="display: none">
+      <div class="inner-container">
+        <h1>GeoGame Trivia</h1>
+        <p id="question"></p>
+        <div class="input-group">
+          <input type="text" id="answer" placeholder="Type your answer" />
+          <button id="submit">Submit</button>
+        </div>
+        
+        <p id="message"></p>
+        <p id="question_no" style="color: rgb(141, 141, 141); font-size: small;"> </p>
+        <div class="button-group">
+          <button id="leaderboard-btn"><i class="fa fa-trophy"></i> Leader Board</button>
+          <button class="logout-btn"><i class="fa fa-sign-out"></i> Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="leader-board-container" id="leader-board-container" style="display: none">
+      <h1>Leaderboard</h1>
+        <table id="leaderboard-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Username</th>
+              <th>Correct Answers</th>
+              <th>Finish Time</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <!-- Leaderboard rows will be inserted here -->
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button id="prev-btn" class="nav-btn">Previous</button>
+          <button id="next-btn" class="nav-btn">Next</button>
+        </div>
+
+        <button id="back-to-game-btn">Back to Game</button>
+    </div>
+
+    <div class="admin-container" id="admin-container" style="display: none">
+      <h1>Admin Panel</h1>
+      <h2>Questions</h2>
+        <table id="questions-table">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Answer</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="questions-body">
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button id="add-qst-btn" style="background-color: #4caf50;">
+            <i class="fa fa-plus"></i> Add
+          </button>
+          <div class="nav-buttons">
+            <button id="prev-btn-adm" class="nav-btn">Previous</button>
+            <button id="next-btn-adm" class="nav-btn">Next</button>
+          </div>
+        </div>
+        <button class="logout-btn"><i class="fa fa-sign-out"></i> Logout</button>
+    </div>
+
+    <div class="popup-container" id="popup-container" style="display: none">
+      <div class="popup-content">
+        <h2 id="add-question-label">Add a New Question</h2>
+        <h2 id="edit-question-label" style="display: none;">Edit the Question</h2>
+        <label for="question-input">Question:</label>
+        <input type="text" id="question-input" placeholder="Enter question here">
+    
+        <label for="answer-input">Answer:</label>
+        <input type="text" id="answer-input" placeholder="Enter answer here">
+        <div class="pagination">
+          <button id="add-question-btn" style="background-color: #4caf50;">Add Question</button>
+          <button id="edit-question-btn" style="background-color: #afa54c; display: none;" >Edit Question</button>
+          <button id="close-popup-btn" style="background-color: red;">Close</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <script type="module" src="js/database.js"></script>
+    <script type="module" src="js/main.js"></script> 
+  
+  </body>
+</html>
+
